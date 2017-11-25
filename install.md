@@ -32,8 +32,23 @@ sudo apt-get install docker-ce
 
 ```
 
+## Install Nvidia GPU driver
+
+```
+sudo add-apt-repository ppa:graphics-drivers/ppa
+sudo apt-get update
+```
+
 ## Install Nvidia-docker runtime
 
+```
+curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | \
+  sudo apt-key add -
+curl -s -L https://nvidia.github.io/nvidia-docker/ubuntu16.04/amd64/nvidia-docker.list | \
+  sudo tee /etc/apt/sources.list.d/nvidia-docker.list
+sudo apt-get update
+sudo apt install nvidia-docker2
+```
 
 ## Docker restore image
 
